@@ -1,0 +1,261 @@
+/* Delete all paddings and margins */
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'comic sans ms';
+	color: #fff;
+}
+body{
+	background-color: #2f3e47;
+}
+.table-row{
+	display: table-row;
+}
+.table-cell{
+	display: table-cell;
+	float: none;
+}
+/* Applying a flex dispaly to the main container */
+.container-fluid{
+	margin: 0px;
+	padding: 0px;
+	display: table;
+	justify-content: flex-start;
+	box-sizing: border-box;
+}
+/* stylizing the navigation panel */
+.nav-menu{
+	min-width: 200px;
+	background-color: #f7f7f7;
+	color : #fff;
+	order: 1;
+}
+/* calcutate the right width and applying a flex display */
+.content{
+	width: calc(100vw - 220px);
+	background-color: #2f3e47;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+
+.top-menu{
+	width: 100%;
+	height: 40px;
+	order : 1;
+	display: flex;
+	justify-content: space-between;
+}
+
+.nav-content{
+	width: 100%;
+	order: 2;
+
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+
+}
+/*----------------------------------------------*/
+/* # applying styles for the navigation panel # */
+/*----------------------------------------------*/
+.logo-open-factory{
+	background: url('../logos/open_factory.png');
+	background-repeat: no-repeat;
+	height: 68px;
+	color: black;
+}
+.manager-profil{
+	padding: 5px;
+	color: black;
+	text-align: center;
+}
+.picture{
+	width: 88px;
+	height: 88px;
+	margin: auto;
+	padding: 3px;
+	border : 1px solid #d7e2ea;
+	border-radius: 50%; 
+}
+.picture img{
+	width: 80px;
+	height: 80px;
+	border : 1px solid #d7e2ea;
+	border-radius: 50%; 
+}
+.manager-profil p {
+	margin: 0px;
+	padding: 0px;
+	font-size: 10px;
+	color: black;
+}
+.manager-profil i {
+	margin: 5px;
+	font-size: 14px;
+	font-weight: bold;
+	vertical-align: middle;
+	color: #000;
+}
+.manager-profil i:hover {
+	color: #a6d5f7;
+	cursor: pointer;
+}
+/*----------------------------------------------*/
+.navigation{
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	flex-wrap: wrap;	
+	padding: 0px;
+}
+.title{
+	display: block;
+	margin-bottom: 10px;
+	padding-left: 10px;
+	font-size: 10px;
+	font-weight: bold;
+	color: #000;
+	text-decoration: none;
+
+}
+.item{
+	height: 40px;
+	line-height: 35px;
+	margin: 0px;
+	padding-left: 20px;
+	display: block;
+	font-size: 12px;
+	font-weight: bold;
+	color: #707070;
+	text-decoration: none;
+}
+
+.item i{
+	margin-right: 5px;
+	color: #707070;
+}
+
+.item:hover i{
+	color: #6db6f5;
+}
+
+.item:hover{
+	color: #6db6f5;
+	text-decoration: none;
+	border-left: 5px solid #6db6f5;
+}
+/*-------------------------------------------------*/
+/* # applying styles for the content items panel # */
+/*-------------------------------------------------*/
+
+/* Fab Manager list */
+.manager{
+	width: 300px;
+	margin: 10px;
+	display: flex;
+	justify-content: flex-start;
+	border: 1px solid #aaaaaa;
+	border-radius: 10px;
+	box-sizing: border-box;
+}
+.manager .picture{
+	width: 58px;
+	height: 58px;
+}
+.manager .picture img{
+	width: 50px;
+	height: 50px;
+}
+.manager .picture, .manager-info{
+	margin: 5px;
+}
+.manager-infos p{
+	text-align: left;
+	color: #cccccc;
+}
+#manager-name{
+	font-size: 11px;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 2px;
+}
+#manager-contact{
+	font-size: 10px;
+}
+#manager-option{
+	margin-left: 30px;
+}
+.manager-list{
+	margin: 0px 40px;
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.1);
+	order: 1;
+}
+.managers{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.push-right{
+	float: right;
+}
+/* Fab Manager Actu and events and project */
+.tables-container{
+	font-size: 11px;
+	box-sizing: border-box;
+	order: 2;
+	margin: 20px 40px;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.box{
+	width: 500px;
+	margin-bottom: 10px;
+	padding: 20px;
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.tabes-container div table thead tr th, .tabes-container div table tbody tr td{
+	color: #aaaaaa;
+}
+.table{
+	margin-bottom: 0px;
+}
+.box div{
+	width: 98%;
+	box-sizing : border-box; 
+	margin-bottom: 10px;
+}
+.box-tiltle{
+	font-size: 12px;
+	font-weight: bold;
+}
+
+i{
+	cursor: pointer;
+}
+
+/***********************/
+/* Search feild styles */
+/***********************/
+.top-menu div {
+	box-sizing: border-box;
+	width: 300px;
+	line-height: 38px;
+	padding-left: 20px; 
+}
+.search{
+	width: 200px;
+	height: 25px;
+	background: #2f3e47;
+	border: 1px solid #cccccc;
+	border-radius: 10px;
+	padding-left: 20px;
+	color: #cccccc;
+	font-size: 11px;
+	margin-left: 20px;
+}
