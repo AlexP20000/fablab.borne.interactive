@@ -1,0 +1,13 @@
+.modal{}
+#manager-sttings-modal .modal-dialog{width: 400px;}
+.modal-content{}
+.modal-header{
+	height: 10px;
+	line-height: 10px;
+	margin: 0 0;
+}
+.modal-header button{
+	line-height: 10px;
+	margin: 0 0;
+	padding: 0 0;
+}

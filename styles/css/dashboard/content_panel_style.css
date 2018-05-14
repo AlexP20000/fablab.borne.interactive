@@ -1,0 +1,232 @@
+/*
+	*********************************************************************************
+  ******************************** Content panel style ****************************
+	*********************************************************************************
+*/
+
+/* The content panel container */
+	/* we are going to change its width, background-color and vertical-align */
+	.content-panel-container{
+		width: calc(100vw - 200px);
+		height: 100vh;
+		background-color: #fff;
+		vertical-align: top;
+	}
+
+/* The content panel "top-Content" */
+	/* this section will contain a welcome message */
+		.content-panel-top{
+			box-sizing: border-box;
+			background: #890e4f;
+			margin: 0px;
+			height: 50px;
+		}
+		.content-panel-top h2{
+			margin: 0px;
+			padding: 0px;
+			text-align: center;
+			color: #d7d7d7;
+			line-height: 45px;
+		}
+/* The content panel "bottom-Content" */
+	/* this section will contain the the filtrer and the a table which is going to list all the categories datas or  ... */
+	.content-panel-bottom{
+		width: calc(100vw - 250px);
+		margin: auto;
+		margin-top: 20px;
+	}
+
+	/* The filrer container */
+		.filtrer-container{
+			width: 97%;
+			margin: auto;
+			box-sizing: border-box;
+			margin-top: 20px;
+		}
+	/* The filtrer text-feild */
+		.search{
+			height: 30px;
+			background: url("../../icons/search-glass.svg") no-repeat 12px center/16px;
+			border: 1px solid #cccccc;
+			border-radius: 10px;
+			padding-left: 35px;
+			color: #000;
+			font-size: 12px;
+		}
+
+	/* The table listing the ctegories datats */
+		.table-container{
+			width: 97%;
+			margin: auto;
+			font-size: 12px;
+			box-sizing: border-box;
+			margin-top: 20px;
+		}
+		.tabes-container table thead tr th, .tabes-container table tbody tr td{
+			color: #aaaaaa;
+		}
+		.table{
+			margin-bottom: 0px;
+		}
+
+	/* The managers list */
+		/* This section will list the managers as boxes with a option icon in the right */
+
+		/* The managers list container */
+			.managers-list-container{
+				margin: 0px 40px;
+				padding: 10px;
+				background-color: rgba(255, 255, 255, 0.1);
+				order: 1;
+			}
+
+		/* The managers list title */
+			.managers-list-title{
+				font-size: 12px;
+				font-weight: bold;
+			}
+
+		/* The managers booxes container */
+			.managers-boxes-container{
+				display: flex;
+				justify-content: flex-start;
+				flex-wrap: wrap;
+			}
+
+		/* The manager box */
+			.manager-box{
+				width: 300px;
+				margin: 10px;
+				border: 1px solid #aaaaaa;
+				border-radius: 10px;
+				box-sizing: border-box;
+			}
+			.manager-box div{ 
+				display: inline-block;
+			}
+
+		/* The manager profil */
+		 /* The manager Picture */
+		 .manager-box-picture{
+				width: 58px;
+				height: 58px;
+				margin: 5px;
+				float: left;
+			}
+			.manager-box-picture img{
+				width: 50px;
+				height: 50px;
+			}
+		/* The manager information */
+			.manager-box-infos p{
+				text-align: left;
+				color: #cccccc;
+			}
+			#manager-box-name{
+				font-size: 12px;
+				font-weight: bold;
+				margin-top: 10px;
+				margin-bottom: 2px;
+				float: left;
+			}
+			#manager-box-contact{
+				font-size: 11px;
+			}
+			#manager-box-option{
+				float: right;
+				width: -100px;
+				margin: 0px;
+				padding-top: 5px;
+				margin-right: 15px;
+
+			}
+		/* :) */
+	/* ;) */
+
+/* Add rubric content panel styles */
+	/* The formular container */
+	.add-rubric-form-container{
+		width: 98%;
+		margin: auto;
+	}
+	.add-rubric-form-container select,
+	.add-rubric-form-container select option,
+	.add-rubric-form-container input[type="text"],
+	.add-rubric-form-container input[type="email"],
+	.add-rubric-form-container input[type="password"],
+	.add-rubric-form-container input[type="url"],
+	.add-rubric-form-container input[type="file"],
+	.modal-body select,
+	.modal-body select option,
+	.modal-body input[type="text"],
+	.modal-body input[type="email"],
+	.modal-body input[type="password"],
+	.modal-body input[type="url"],
+	.modal-body input[type="file"]{
+		width: 250px;
+		height: 24px;
+		padding: 0px;
+		padding-left: 5px;
+		font-size: 12px;
+		border-radius: 7px;
+	}
+	.add-rubric-form-container fieldset{
+		
+		margin: 10px;
+		display: flex;
+		justify-content: space-between;
+	}
+	.add-rubric-form-container legend{
+		font-size: 14px;
+	}
+
+/* The general Items */
+	/* html default selectors */
+		i{ cursor: pointer; }
+		label{ 
+			color: #000;
+			font-size: 12px;
+		}
+		p{
+			margin: 0px;
+			padding: 0px;
+			padding-left: 5px;
+		}
+		h4{
+			margin: 0px;
+			margin-top:5px;
+			margin-bottom: 10px;
+			padding: 0px;
+			font-family: 'Amaranth';
+			font-size: 20px;
+		}
+
+	/* Prefered button settings */
+		.my-btn{
+			width: 250px;
+			margin: 0px;
+			margin-top: 20px;
+			font-size: 12px;
+		}
+		.btn-container{
+			width: 97%;
+			margin: auto;
+			margin-top: 20px;
+			display: flex;
+			justify-content: space-between;
+		}
+		.modal .my-btn{
+			width: 180px;
+		}
+	/* Colors */
+		.red{color: red;}
+		.blue{color: blue;}
+		.green{color: green;}
+		.purple{color:purple;}
+
+	/* Positions */
+		.push-right{ float: right; }
+		.center{text-align: center;}
+		.space{padding-left: 10px;}
+		.pref-width{width: 90%; margin:auto;}
+		.height{height: 35px;}
