@@ -30,6 +30,9 @@ defined('FILE_READ_MODE')  OR define('FILE_READ_MODE', 0644);
 defined('FILE_WRITE_MODE') OR define('FILE_WRITE_MODE', 0666);
 defined('DIR_READ_MODE')   OR define('DIR_READ_MODE', 0755);
 defined('DIR_WRITE_MODE')  OR define('DIR_WRITE_MODE', 0755);
+defined('DB_NAME')  OR define('DB_NAME', 'open_mag');
+defined('DB_USER')  OR define('DB_USER', 'admin');
+defined('DB_PASS')  OR define('DB_PASS', '123456789');
 
 /*
 |--------------------------------------------------------------------------

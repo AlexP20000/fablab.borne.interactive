@@ -3,7 +3,8 @@
 	 * 
 	 */
 	class Page extends CI_Controller{
-		private $PATH = 'C:/wamp64/www/open_mag/images/'; ### OR '/var/www/html/licence/lic46/open_mag/images/' ###
+		private $PATH;
+		//private $PATH = 'C:/wamp64/www/open_mag/images/'; ### OR '/var/www/html/licence/lic46/open_mag/images/' ###
 
 		/* class constructor */
 			public function __construct(){
@@ -11,11 +12,14 @@
 				$this->load->helper('url_helper');
 				$this->load->model('DB_Rubric');
 				$this->load->model('DB_Page');
+
+				$this->PATH = $this->get_images_path();
 			}
 
 		/* This function will show the back office */
 			public function all(){
 				$datas['pages'] = $this->DB_Page->get_all_pages();
+
 				$this->load->view('back_office/dashboard');
 				$this->load->view('back_office/home_content_panel', $datas);
 			}
@@ -24,7 +28,7 @@
 			public function new_page(){
 				$datas = array(
 					'rubric_types' => $this->DB_Rubric->get_all_types(),
-					'link_types' => $this->DB_Rubric->get_all_link_types(),
+					'link_types' => $this->DB_Page->get_all_link_types(),
 					'pages' => $this-> DB_Page->get_all_pages()
 				);
 
@@ -32,46 +36,15 @@
 				$this->load->view('back_office/add_page', $datas);
 			}
 		/* function that .... */
-			private function upload_mutiple_files($post_source_name){
-				/* Get the curent link id from the database */
-					$curent_link_id = 1;
-
-				/* Set a next id */
-					$next_link = $curent_link_id+1;
-
-				/* Upload files */
-					if(!empty($_FILES[''.$post_source_name.''])){
-						/* Attributs concerning the files */
-							$files_names = $_FILES['files']['name'];
-							$files_temp = $_FILES['files']['tmp_name'];
-							$files_types = $_FILES['files']['type'];
-
-						/* Array containing the files names to insert into database */
-							$names = array();
-
-						/* Uploading the files */	
-							for($cpt=0; $cpt<count($files_names); $cpt++){
-								/* Get the file */
-								if(!empty($files_types[$cpt])){
-									$type = explode('/', $files_types[$cpt])[1];
-									$name[$cpt] = $next_link.'.'.$type;
-								}
-								else $name[$cpt] = null;
-
-								/* move the file the correct path */
-									$path = $this->PATH.$name[$cpt];
-									if(move_uploaded_file($files_temp[$cpt], $path)){
-										$next_link++;
-										$result = true;
-									}
-									else $result = false;
-							}
-					}
-					else $result = false;
-
-					if($result) return $names;
-					else return null;
+			private function get_images_path(){
+				$path_array = explode('\\', __FILE__);
+				$path = "";
+				for($i=0; $i<(count($path_array)-3); $i++){
+					$path = $path.$path_array[$i].'/';
+				}
+				return $path.'images/';
 			}
+
 			/* function that upload a file into a path */
 				private function upload_file($src, $name){
 					/* verify that the source is not empty */
@@ -118,17 +91,33 @@
 						/* set the name file to the next id */
 							$id++;
 							$links = array();
+												/* upload the page image */
+							$temp = $this->upload_file('pag_picture', 'img_pag_'.$pag_id);
+					
+						/* construct array to send datas to the db model */
+							$links[0]['link_id'] = $id;
+							$links[0]['link_label'] = 'Image de la page';
+							$links[0]['link_type'] = $this->DB_Page->get_link_type_id('Image');
+							$links[0]['link_value'] = $temp;
+
+						/* insert the image into database */
+							$this->DB_Page->insert_page_links($links, $pag_id);
+						/* Increment the id of the next link */
+							$id++;
+
+						/* Upload other links */
 						/* Calculte the number of links */
 							$NB_LINK = count($_FILES);
 						/* Get links indexes */
 							$KEYS = array_keys($_FILES);
 							$INDEXES = array();
-							for($cpt=0; $cpt<$NB_LINK; $cpt++){
-								$INDEXES[$cpt] = explode('_', $KEYS[$cpt])[1];
+							/* we should start from he index 1 --> because index 0 : is for the img_pic */
+							for($cpt=1; $cpt<$NB_LINK; $cpt++){
+								$INDEXES[$cpt-1] = explode('_', $KEYS[$cpt])[1];
 							}
 
 						/* create an array with the correct links information */
-							for($i=0; $i<$NB_LINK; $i++){
+							for($i=0; $i<$NB_LINK-1; $i++){
 								/* Insert files values etc. + upload files */
 									if(!empty($_FILES['file_'.$INDEXES[$i]]['name'])){
 										$temp = $this->upload_file('file_'.$INDEXES[$i], $id);
@@ -178,8 +167,9 @@
 			public function edit($id){
 				$datas = array(
 					'rubric_types' => $this->DB_Rubric->get_all_types(),
-					'link_types' => $this->DB_Rubric->get_all_link_types(),
+					'link_types' => $this->DB_Page->get_all_link_types(),
 					'page' => $this->DB_Page->get($id),
+					'page_image' => $this->DB_Page->get_page_image($id),
 					'page_links' => $this->DB_Page->get_page_links($id)
 				);
 

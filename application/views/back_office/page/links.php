@@ -1,5 +1,5 @@
 <fieldset >
-  <legend style="font-size: 14px; font-weight: bold;">Ajouter les liens concernant la page : </legend>
+  <legend style="font-size: 14px; font-weight: bold;">Ajouter des liens à la page : </legend>
   <div style="width: 99%; margin: auto; font-size: 12px;">
     <table class="table table-striped table-bordered table-hover table-condensed">
       <thead>

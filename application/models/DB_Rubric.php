@@ -12,11 +12,6 @@
 				return $query->result_array();
 			}
 
-			public function get_all_link_types(){
-				$query = $this->db->query('SELECT tln_id, tln_libelle FROM t_type_lien_tln');
-				return $query->result_array();
-			}
-
 		/* Function that ... */
 			public function add($datas){
 				$this->db->query('

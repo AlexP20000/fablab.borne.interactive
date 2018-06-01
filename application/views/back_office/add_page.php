@@ -13,6 +13,7 @@
       <form id="my-form" method="post" class="form-bloc" action="../page/add" enctype="multipart/form-data">
         <div>
           <?php include 'page/general_information.php'; ?>
+          <?php include 'page/picture.php'; ?>
           <?php include 'page/description.php'; ?>
           <?php include 'page/links.php'; ?>
         </div>

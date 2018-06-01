@@ -21,7 +21,7 @@
 						<th style="width: 30%;">Titre de la Page</th>
 						<th style="width: 8%;">Date</th>
 						<th style="width: 8%;">Type</th>
-						<th style="width: 10%;">Auteur</th>
+						<th style="width: 15%;">Auteur</th>
 						<th style="width: 8%;">Statut</th>
 						<th style="width: 8%;" class="center">Actions</th>
 					</tr>

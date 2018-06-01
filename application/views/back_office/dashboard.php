@@ -1,7 +1,7 @@
 <?php 
 	if(!empty($_SESSION['cmp_pseudo']) && !empty($_SESSION['cmp_mot_de_passe'])){
 		/* Connect to the database */
-			$mysqli = new mysqli("localhost", "admin", "123456789", "open_mag");
+			$mysqli = new mysqli("localhost", DB_USER, DB_PASS, DB_NAME);
 
 		/* Retreiv datas from the databse */
 			$result = $mysqli->query('
@@ -124,7 +124,7 @@
 		<div class="main-container">
 			<div class="table-row">
 				<!-- The navigation Panel -->
-				<?php include('dashboard_navigation_panel.php'); ?>
+				<?php include('dashboard_navigation_panel.php');?>
 
 				<!-- The content panel -->
 				

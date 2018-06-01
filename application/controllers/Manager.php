@@ -1,12 +1,16 @@
 <?php 
 	class Manager extends CI_Controller{
-		private $PATH = 'C:/wamp64/www/open_mag/assets/back_office/profils/'; ### OR '/var/www/html/licence/lic46/open_mag/assets/back_office/profils/' ###
+		private $PATH;
+		//private $PATH = 'C:/wamp64/www/open_mag/assets/back_office/profils/'; ### OR '/var/www/html/licence/lic46/open_mag/assets/back_office/profils/' ###
+
 
 		/* Class constructor */
 			public function __construct(){
 				parent::__construct();
 				$this->load->helper('url_helper');
 				$this->load->model('DB_Manager');
+
+				$this->PATH = $this->get_images_path();
 			}
 		/* Functions that lets us to manage the managers */
 			/* function that crypt the password with sha256 */
@@ -14,6 +18,16 @@
 					$sel = "Shadowalker";
 					return hash('sha256', $sel.$password);
 				}
+
+		/* function that .... */
+			private function get_images_path(){
+				$path_array = explode('\\', __FILE__);
+				$path = "";
+				for($i=0; $i<(count($path_array)-3); $i++){
+					$path = $path.$path_array[$i].'/';
+				}
+				return $path.'assets/back_office/profils/';
+			}
 
 		/* Function that lets us to load the views that managing the managers */
 			public function manage(){

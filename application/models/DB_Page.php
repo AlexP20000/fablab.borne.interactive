@@ -82,6 +82,12 @@
 			}
 
 		/* function that ... */
+			public function get_all_link_types(){
+				$query = $this->db->query('SELECT tln_id, tln_libelle FROM t_type_lien_tln WHERE tln_libelle <> \'Image\'');
+				return $query->result_array();
+			}
+
+		/* function that ... */
 			public function get_last_link_id(){
 				$query = $this->db->query('SELECT MAX(lie_id) AS lie_id FROM t_lien_lie');
 				$result = $query->result_array();
@@ -119,6 +125,32 @@
 			$this->db->query('DELETE FROM t_lien_lie WHERE lie_id = '.$id.'');
 		}
 
+		public function get_link_type_id($label){
+			$query = $this->db->query('
+				SELECT tln_id
+				FROM t_type_lien_tln
+				WHERE tln_libelle = \''.$label.'\'
+			');
+			$result = $query->result_array();
+			if(!empty($result)){
+				return $result[0]['tln_id'];
+			}
+			return null;
+		}
+
+		/* function that .. */
+		public function get_page_image($id){
+			$query = $this->db->query('
+				SELECT lie_valeur
+				FROM t_lien_lie
+				WHERE lie_id = \''.$id.'\'
+			');
+			$result = $query->result_array();
+			if(!empty($result)){
+				return $result[0]['lie_valeur'];
+			}
+			return null;
+		}
 	}
 
 ?>
