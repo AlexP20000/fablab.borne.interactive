@@ -1,0 +1,178 @@
+/* root css */
+:root {
+    --dark: #1b1b1b;
+    --light: #f7f3f38c;
+}
+/* will override the 16px padding & margin from w3css */
+* {
+    padding: 0;
+    margin: 0;
+    font: 1rem Arial, Menlo, Tahoma;
+	background-color: cadetblue;
+}
+body {
+    width: 100%;
+    height: 100%;
+	background-color: cadetblue;
+}
+/* Container of all elements */
+#container {
+    width: 100%;
+    height: 100%;
+}
+/* header  */
+#header {
+	padding: 0;
+	margin: 0;
+    width: 100%;
+    height: auto;
+    min-height: 100px;
+    font: 1.5rem italic Roboto, Arial, Tahoma;
+}
+/* Bonjour circle on the left */
+#bonjourCircle {
+	width: 15%;
+}
+#bonjourCircle a:hover {
+	background-color: #e8e8f9;
+	color: #7e0fdb;
+}
+#bonjourCircle a {
+	font-size: 100%;
+	text-decoration: none;
+	color: #ececec;
+	display: block;
+	height: 90px;
+	width: 90px;
+	top: 25px;
+	line-height: 90px;
+	margin-left: -10px;
+	margin-top: -20px;
+	position: absolute;
+	text-align: center;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	/* designing circle*/
+	border: solid rgba(187, 187, 187, 0.9);
+	box-shadow: -3px 1px 3px #1b1b1b;
+	background-color: #363642;
+}
+/* Rubric name in the middle of header */
+#rubricName {
+    text-align: center;
+}
+#rubricName a {
+	display: block;
+	text-align: center;
+	position: absolute;
+	top: 5%;
+	left: 45%;
+	color: #000;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 100%;
+}
+#rubricName a:hover, #timeBlock a:hover {
+	color: #7e0fdb;
+}
+/* time on the right side of header */
+#timeBlock {
+    width: 15%;
+	text-align: center;
+}
+#timeBlock a {
+	display: block;
+	position: absolute;
+	top: 5%;
+	right: 0;
+	text-decoration: none;
+	font-weight: bold;
+	color: #000000;
+	font-size: 100%;
+}
+/* Title of page container */
+#pageTitle {
+    width: 100%;
+    min-height: 100px;
+    text-align: center;
+     background-color: rgba(108, 133, 139, 0.377);
+}
+/* Title of page */
+#pageTitle h1 {
+    /* position: absolute;
+    top: 5%;
+    left: 45%; */
+    text-transform: capitalize;
+    color: black;
+    font: 2rem bold Roboto, Menlo, Arial;
+
+}
+/* main image of the page + description + small images container */
+#mainImgDescContainer, #images {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    /* height: 100%; */
+}
+/* main image */
+.mainImg {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: auto;
+}
+/* article description */
+#description  {
+    padding: 1%;
+}
+.smallImageDescription, .smallImageDescription h4 {
+	background-color: #ffffff;
+}
+.descriptionText {
+	color: #000;
+}
+/* bottom page link container */
+#bottomPageLink {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: auto;
+	min-height: 50px;
+	font: 1.5rem italic Roboto, Arial, Tahoma;
+}
+/* bottom page link */
+#bottomPageLink a {
+	position: absolute;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	bottom: 0;
+	left: 45%;
+	width: 150px;
+	height: 50px;
+	color: #000;
+	padding: 10px;
+	font-size: 100%;
+	font-weight: lighter;
+	background-color: #7e0fdb;
+	border: 2px solid #fff;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: inset 2px 3px 3px #404040, inset 2px 4px 4px #d6d6d6;
+	-moz-box-shadow: inset 2px 3px 3px #404040, inset 2px 4px 4px #d6d6d6;
+	box-shadow: inset 2px 3px 3px #404040, inset 2px 4px 4px #d6d6d6;
+
+}
+/* bottom page link on hover */
+#bottomPageLink a:hover {
+
+}
+/* application name */
+.author {
+    padding: 10px;
+    text-align: center;
+    color: rgb(7, 9, 10);
+}
