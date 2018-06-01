@@ -10,6 +10,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
+
+	<!-- begin region of page slider  -->
+<div class="container">
 	<!-- begin region of w3-display-container -->
 	<div id="container" class="w3-display-container w3-mobile">
 		<!-- begin region of header -->
@@ -22,7 +25,6 @@
 				<a href="<?php echo base_url(); ?>"><?php echo $projet['rub_libelle']; ?></a>
 			</div>
 			<div id="timeBlock" class="w3-container w3-cell w3-cell-middle w3-mobile">
-<!--				<a href="--><?php //echo base_url(); ?><!--">--><?php //echo date("l jS F Y h:i:s G"); ?><!--</a>-->
 				<a href="<?php echo base_url(); ?>"><?php echo date(DATE_RFC850); ?></a>
 			</div>
 			<!-- </div> -->
