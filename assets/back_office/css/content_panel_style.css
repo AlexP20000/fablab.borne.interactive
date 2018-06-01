@@ -1,0 +1,172 @@
+/*
+	*********************************************************************************
+  ******************************** Content panel style ****************************
+	*********************************************************************************
+*/
+
+/* The content panel container */
+	/* we are going to change its width, background-color and vertical-align */
+	.content-panel-container{
+		width: calc(100vw - 200px);
+		height: 100vh;
+		background-color: #fff;
+		vertical-align: top;
+	}
+
+/* The content panel "top-Content" */
+	/* this section will contain a welcome message */
+		.content-panel-top{
+			min-width: 1070px;
+			box-sizing: border-box;
+			background: #890e4f;
+			margin: 0px;
+			height: 50px;
+		}
+		.content-panel-top h2{
+			margin: 0px;
+			padding: 0px;
+			text-align: center;
+			color: #d7d7d7;
+			line-height: 45px;
+		}
+/* The content panel "bottom-Content" */
+	/* this section will contain the the filtrer and the a table which is going to list all the categories datas or  ... */
+	.content-panel-bottom{
+		min-width: 1070px;
+		width: calc(100vw - 250px);
+		margin: auto;
+		margin-top: 20px;
+	}
+
+	/* The filrer container */
+		.filtrer-container{
+			width: 97%;
+			margin: auto;
+			box-sizing: border-box;
+			margin-top: 20px;
+		}
+	/* The filtrer text-feild */
+		.search{
+			height: 30px;
+			background: url("../icons/search-glass.svg") no-repeat 12px center/16px;
+			border: 1px solid #cccccc;
+			border-radius: 10px;
+			padding-left: 35px;
+			color: #000;
+			font-size: 12px;
+		}
+
+	/* The table listing the ctegories datats */
+		.table-container{
+			width: 97%;
+			margin: auto;
+			font-size: 12px;
+			box-sizing: border-box;
+			margin-top: 20px;
+		}
+		.tabes-container table thead tr th, .tabes-container table tbody tr td{
+			color: #aaaaaa;
+		}
+		.table{
+			margin-bottom: 0px;
+		}
+	/* ;) */
+
+/* Add rubric content panel styles */
+	/* The formular container */
+	.add-rubric-form-container{
+		width: 98%;
+		margin: auto;
+	}
+	/* The formular items */
+		.add-rubric-form-container select,
+		.add-rubric-form-container select option,
+		.add-rubric-form-container input[type="text"],
+		.add-rubric-form-container input[type="email"],
+		.add-rubric-form-container input[type="password"],
+		.add-rubric-form-container input[type="url"],
+		.add-rubric-form-container input[type="file"],
+		.add-rubric-form-container input[type="date"],
+		.modal-body select,
+		.modal-body select option,
+		.modal-body input[type="text"],
+		.modal-body input[type="email"],
+		.modal-body input[type="password"],
+		.modal-body input[type="url"],
+		.modal-body input[type="file"]{
+			height: 26px;
+			padding: 0px;
+			padding-left: 5px;
+			font-size: 12px;
+		}
+
+	#date{
+		background: url("../icons/calendar.svg") no-repeat 12px center/16px;
+	}
+	.selected-type-link{
+		width: 98%;
+	}
+	
+/* The general Items */
+	/* html default selectors */
+		i{ cursor: pointer; }
+		.modal-body input[type="checkbox"], .checkbox label{
+			margin: 0px 0px 0px 0px; 
+			padding: 0px 0px 0px 0px; 
+			margin-top: 2px;
+		}
+		label{ 
+			color: #000;
+			font-size: 12px;
+		}
+		p{
+			margin: 0px;
+			padding: 0px;
+			padding-left: 5px;
+		}
+		h4{
+			margin: 0px;
+			margin-top:5px;
+			margin-bottom: 10px;
+			padding: 0px;
+			font-family: 'Amaranth';
+			font-size: 20px;
+		}
+
+	/* Prefered button settings */
+		.my-btn{
+			width: 250px;
+			height: 30px;
+			line-height: 15px;
+			margin: 0px;
+			margin-top: 20px;
+			font-size: 12px;
+		}
+		.btn-container{
+			width: 97%;
+			margin: auto;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			display: flex;
+			justify-content: space-between;
+		}
+		.modal .my-btn{
+			width: 90%;
+			margin: 10px;
+		}
+	/* Colors and font-sizes */
+		.black{color: black;}
+		.red{color: red;}
+		.blue{color: blue;}
+		.green{color: green;}
+		.purple{color:purple;}
+		.sm-font{font-size: 12px;}
+		.lg-font{font-size: 14px;}
+
+	/* Positions */
+		.push-right{ float: right; }
+		.center{text-align: center;}
+		.space{padding-left: 14px;}
+		.large-space{padding-left: 20px;}
+		.pref-width{width: 90%; margin: 10px;}
+		.full-width{width: 100%;}

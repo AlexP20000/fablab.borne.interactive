@@ -1,0 +1,55 @@
+/* Delete all paddings and margins */
+	* {
+		margin: 0px;
+		padding: 0px;
+		font-family: 'comic sans ms';
+	}
+
+/* Set to the body a background color */
+	body{
+		background-color: #fff;
+	}
+
+/* First level of the container == Main container style */
+	/* it will make our layout displying as a table */
+	.main-container{
+		display: table;
+		margin: 0px;
+		padding: 0px;
+	}
+
+/* Second level of the container */
+	/* it will make our layout displying as a single table row */
+	.table-row{
+		display: table-row;
+	}
+
+/* Third level of the container */
+	/* it will be applyed to 2 div component (navigation-panel ant content-panel) under the Second container level, 
+		in order to get the flexible height layout between them 
+	*/
+	.table-cell{
+		display: table-cell;
+		float: none;
+	}
+
+/* Customized scrollbar*/
+	/* width */
+	::-webkit-scrollbar {
+	  width: 10px;
+	}
+
+	/* Track */
+	::-webkit-scrollbar-track {
+	  background: #f1f1f1; 
+	}
+	 
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+	  background: #888; 
+	}
+
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+	  background: #555; 
+	}

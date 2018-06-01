@@ -1,0 +1,81 @@
+table.dataTable{
+	border-collapse: collapse;
+}
+
+table.dataTable thead th, table.dataTable thead td {
+  padding: 5px 10px;
+  border-bottom: 0px;
+}
+
+table.dataTable tbody th, table.dataTable tbody td {
+  padding: 5px 10px;
+}
+
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+  color: #f00 !important;
+  border: 0px;
+  background-color: white;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(100%, #fff));
+  background: -webkit-linear-gradient(top, #fff 0%, #fff 100%);
+  background: -moz-linear-gradient(top, #fff 0%, #fff 100%);
+  background: -ms-linear-gradient(top, #fff 0%, #fff 100%);
+  background: -o-linear-gradient(top, #fff 0%, #fff 100%);
+  background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+  font-weight: bold;
+	font-size: 14px;
+}
+
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+  color: #f00 !important;
+  border: 0px;
+  background-color: white;
+  background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 12px;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover{
+  color: #000 !important;
+  border: 0px;
+  background-color: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(100%, #fff));
+  background: -webkit-linear-gradient(top, #fff 0%, #fff 100%);
+  background: -moz-linear-gradient(top, #fff 0%, #fff 100%);
+  background: -ms-linear-gradient(top, #fff 0%, #fff 100%);
+  background: -o-linear-gradient(top, #fff 0%, #fff 100%);
+  background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+}
+
+.dataTables_wrapper .dataTables_filter {
+  float: right;
+  text-align: right;
+  display: none;
+}
+.dataTables_wrapper .dataTables_length {
+  float: left;
+  padding-left: 5px;
+}
+.dataTables_wrapper .dataTables_length label{
+  font-weight: normal;
+}
+
+.dataTables_wrapper .dataTables_length label select{
+  display: inline-block;
+  width: 55px;
+	height: 25px;
+	padding: 1px 3px;
+	font-size: 12px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}

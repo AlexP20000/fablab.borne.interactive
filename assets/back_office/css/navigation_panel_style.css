@@ -1,0 +1,120 @@
+/*
+	*********************************************************************************
+  ****************************** Navigation panel style ***************************
+	*********************************************************************************
+*/
+
+/* The navigation panel container */
+	/* we are going to change the witdh, the background color and the font color */
+	.navigation-panel-container{
+		min-width: 200px;
+		min-height: 100%;
+		background-color: #292929;
+	}
+
+/* Navigation panel items (logo, manager-profil ant the navigation-menu) style */
+	/* Open factory logo */
+		.open-factory-logo{
+			background: url('../logos/open_factory.png');
+			background-repeat: no-repeat;
+			height: 68px;
+		}
+
+	/* Manager profil */
+		/* The global container of the manager profil */
+		/* it contains the picture and the name and the settings-icons of the manager */
+			.manager-profil-container{
+				padding: 5px;
+				text-align: center;
+			}
+
+		/* The manager picture container */
+			.manager-picture{
+				width: 88px;
+				height: 88px;
+				margin: auto;
+				padding: 3px;
+				border : 1px solid #d7e2ea;
+				border-radius: 50%; 
+				cursor: pointer;
+			}
+
+		/* The manger picture */
+			.manager-picture img{
+				width: 80px;
+				height: 80px;
+				border : 1px solid #d7e2ea;
+				border-radius: 50%; 
+			}
+
+		/* The manager name */
+			.manager-profil-container p {
+				margin: 0px;
+				padding: 0px;
+				font-size: 10px;
+				color: #fff;
+			}
+
+		/* The settings icons */
+			.manager-profil-container i {
+				margin: 5px;
+				font-size: 14px;
+				font-weight: bold;
+				vertical-align: middle;
+				color: #c0c0c0;
+			}
+			.manager-profil-container i:hover {
+				color: #31b55a;
+				cursor: pointer;
+			}
+
+	/* Navigation menu  */
+		/* The global container of the navigation items */
+		/* it contains the icon and the label of each item */
+		.navigation-menu-container{
+			display: flex;
+			justify-content: flex-start;
+			flex-direction: column;
+			flex-wrap: wrap;	
+			padding: 0px;
+		}
+
+	/* The navigation menu title */
+		.navigation-menu-title{
+			display: block;
+			margin-bottom: 10px;
+			padding-left: 10px;
+			font-size: 10px;
+			font-weight: bold;
+			color: #fff;
+			text-decoration: none;
+		}
+
+	/* The navigation menu item */
+		.item{
+			height: 35px;
+			line-height: 30px;
+			margin: 0px;
+			padding-left: 20px;
+			display: block;
+			font-size: 11px;
+			font-weight: bold;
+			color: #c0c0c0;
+			text-decoration: none;
+			cursor: pointer;
+		}
+		.item:hover{
+			color: #31b55a;
+			text-decoration: none;
+			border-left: 3px solid #31b55a;
+			cursor: pointer;
+		}
+
+	/* The navigation menu item icon */	
+		.item i{
+			margin-right: 5px;
+			color: #c0c0c0;
+		}
+		.item:hover i{
+			color: #31b55a;
+		}
