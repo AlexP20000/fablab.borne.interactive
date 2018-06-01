@@ -1,3 +1,5 @@
+create user 'admin' identified by '123456789';
+grant all on open_mag.* to 'admin';
 
 create database open_mag character set utf8 collate utf8_general_ci;
 use open_mag;
