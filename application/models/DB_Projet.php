@@ -1,12 +1,12 @@
 <?php
 /**
- * Created by PhpStorm.
+ * Created on Visual Studio Code
  * User: alioum
  * Date: 27/05/2018
  * Time: 16:00
  */
 
-class  Projet_Model extends CI_Model {
+class  DB_Projet extends CI_Model {
 
 	/**
 	 * Projet_Model constructor.
@@ -21,7 +21,7 @@ class  Projet_Model extends CI_Model {
 	 * @param bool $pag_id
 	 * @return array of values from table t_pages_pag where id = rubrique.id
 	 */
-	public function get_projets($pag_id = FALSE) {
+	public function get_projets($proj_id = FALSE) {
 
 			if ($pag_id === FALSE) {
 				$this->db->select();
@@ -36,7 +36,7 @@ class  Projet_Model extends CI_Model {
 		// get the posts where $slug is present
 		$this->db->select();
 		$this->db->from('t_rubrique_rub, t_page_pag');
-		$this->db->where(array( 'pag_id' => $pag_id));
+		$this->db->where(array( 'pag_id' => $proj_id));
 		$query_projets = $this->db->get();
 		return $query_projets->row_array();
 	}

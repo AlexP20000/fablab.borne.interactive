@@ -115,15 +115,16 @@ body {
 }
 /* end region of center circle styling */
 
-/* application stuff */
+/* footer link */
 h1.author {
     position: absolute;
     bottom: 0;
-    left: 45%;
+    left: 40%;
     text-align:center;
-    color: white;
+    color: rgb(12, 9, 9);
     font-family: Helvetica, Arial, sans-serif;
     font-weight: 300;
+    font-size: 2rem;
     z-index: 2;
 }
 
@@ -165,21 +166,29 @@ h1.author a:hover {
         left: -400%;
     }
 }
+/* slides global container */
 #slider {
 	padding: 0;
 	margin: 0;
     width: 100%;
     height: 100%;
 }
+/* slides i.e images */
 #slider .slider-view img {
     width: 20%;
-	max-width: 100%;
-	height: auto;
     float: left;
+	max-width: 100%;
+	height: 100%;
+	height: 100%;
 }
+/* slides i.e images container */
+/* screen resolution = 1920*1080, should make
+the images have this resolution for better rendering */
 #slider .slider-view {
     position: relative;
     width: 500%;
+    height: 100vh;
+    /* height: 100vh; */
     left: 0;
     text-align: left;
     font-size: 0;
@@ -201,7 +210,7 @@ h1.author a:hover {
        box-shadow: 0 0 0 0 rgba(183, 23, 189, 0.733); /* big circle in the middle of animation*/
     /*}  */
     80% {
-        box-shadow: 0 0 0 200px rgba(93, 193, 240, 0), 0 0 0 60px rgba(255, 109, 74, 0);
+        box-shadow: 0 0 0 200px rgba(89, 178, 219, 0), 0 0 0 60px rgba(255, 109, 74, 0);
     }
     100% {
         box-shadow: 0 0 0 0 rgba(93, 193, 240, 0), 0 0 0 60px rgba(255, 109, 74, 0);
