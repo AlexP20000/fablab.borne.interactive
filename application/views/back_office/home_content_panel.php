@@ -19,7 +19,7 @@
 					<tr>
 						<th style="width: 3%;" class="center">id</th>
 						<th style="width: 30%;">Titre de la Page</th>
-						<th style="width: 8%;">Date</th>
+						<th style="width: 8%;" class="space">Date</th>
 						<th style="width: 8%;">Type</th>
 						<th style="width: 15%;">Auteur</th>
 						<th style="width: 8%;">Statut</th>
@@ -37,7 +37,7 @@
 									<td class="center">'.$page['pag_date'].'</td>
 									<td><p>'.$page['rub_libelle'].'</p></td>
 									<td><p>'.$page['cmp_pseudo'].'</p></td>
-									<td><p class="space">'.$page['pag_statut'].'</p></td>
+									<td><a href="../page/change/'.rawurlencode($page['pag_statut']).'/'.$page['pag_id'].'">'.$page['pag_statut'].'</a></td>
 									<td class="center">
 										<a title="Visualiser la page" href=""><i class="green fas fa-eye"></i></a>
 										<a title="Mettre à Jour la page" href="../page/edit/'.$page['pag_id'].'" target="frame" class="edit-page"><i class="space blue fas fa-edit"></i></a>

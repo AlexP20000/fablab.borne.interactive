@@ -24,8 +24,8 @@
       <label>Sélectionner le statut de la page :</label>
       <select class="form-control" required="true" name="pag_statut">
         <option disabled selected hidden>Select ...</option>
-        <option value="publiée">Publier la page</option>
-        <option value="non publiée">Ne pas publier la page</option>
+        <option value="Publiée">Publier la page</option>
+        <option value="Non publiée">Ne pas publier la page</option>
       </select>
     </div>
 

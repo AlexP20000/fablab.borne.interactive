@@ -1,4 +1,4 @@
-<?php 
+<?php
 	/**
 	 * 
 	 */
@@ -35,7 +35,26 @@
 				$this->load->view('back_office/dashboard');
 				$this->load->view('back_office/add_page', $datas);
 			}
-		/* function that .... */
+
+		/* function that ... */
+			public function change($status, $id){
+				$status = rawurldecode($status);
+				if(!empty($id)){
+					if(strcmp($status, "Publiée") == 0){ $this->DB_Page->unpublish($id); }
+					if(strcmp($status, "Non publiée") == 0){ $this->DB_Page->publish($id); }
+					echo '<script>document.location.href = "../../../page/all";</script>';
+				}
+				else{
+					echo '
+						<script>
+							alert("Erreur --> Le statut n\'a pas été correctement mis à jour !");
+							document.location.href = "../../../page/all";
+						</script>
+					';
+				}
+			}
+
+		/* function that ... */
 			private function get_images_path(){
 				$path_array = explode('\\', __FILE__);
 				$path = "";

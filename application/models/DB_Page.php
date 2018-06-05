@@ -82,6 +82,24 @@
 			}
 
 		/* function that ... */
+			public function publish($id){
+				$this->db->query('
+					UPDATE t_page_pag SET
+					pag_statut=\'Publiée\'
+					WHERE pag_id=\''.$id.'\'
+				');
+			}
+
+		/* function that ... */
+			public function unpublish($id){
+				$this->db->query('
+					UPDATE t_page_pag SET
+					pag_statut=\'Non publiée\'
+					WHERE pag_id=\''.$id.'\'
+				');
+			}
+
+		/* function that ... */
 			public function get_all_link_types(){
 				$query = $this->db->query('SELECT tln_id, tln_libelle FROM t_type_lien_tln WHERE tln_libelle <> \'Image\'');
 				return $query->result_array();
