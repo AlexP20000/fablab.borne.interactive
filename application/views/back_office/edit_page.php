@@ -116,7 +116,7 @@
 		          	<?php
 		          		if(!empty($page_links)){
 		          			foreach($page_links as $link){
-		          				if($link['lie_valeur'] != "Image"){
+		          				if($link['tln_libelle'] != "Image"){
 			          				echo '
 													<tr>
 							              <td><span class="space">'.$link['lie_libelle'].'</span></td>
@@ -175,8 +175,8 @@
 
 				$('body').on('change', '.selected-type-link', function(){
 			 		var id = $(this).attr("id");
-					var val= $(this).val();
-					if(val == 1){
+					var val= $(this).children("option").filter(":selected").text();
+					if(val == 'HyperTexte' || val == 'Video'){
 						$("#file-"+id).css('display', 'none');
 						$("#file-"+id).val(null);
 						$("#text-"+id).css('display', 'block');

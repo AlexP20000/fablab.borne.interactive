@@ -26,8 +26,8 @@ $(document).ready(function(){
 
  $('body').on('change', '.selected-type-link', function(){
  		var id = $(this).attr("id");
-		var val= $(this).val();
-		if(val == 1){
+		var val= $(this).children("option").filter(":selected").text();
+		if(val == 'HyperTexte' || val == 'Video'){
 			$("#file-"+id).css('display', 'none');
 			$("#file-"+id).val(null);
 			$("#text-"+id).css('display', 'block');
