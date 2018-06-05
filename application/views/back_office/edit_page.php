@@ -82,6 +82,7 @@
 		        </div>
 		      </div>
 		    </fieldset>
+		    
 		    <fieldset style="display: block;">
 				  <legend style="font-size: 14px; font-weight: bold;">Image de la page : </legend>
 				  <div class="form-group">
@@ -115,14 +116,16 @@
 		          	<?php
 		          		if(!empty($page_links)){
 		          			foreach($page_links as $link){
-		          				echo '
-											<tr>
-					              <td><span class="space">'.$link['lie_libelle'].'</span></td>
-					              <td><span class="space">'.$link['tln_libelle'].'</span></td>
-					              <td><a href="#" class="space">'.$link['lie_valeur'].'</a></td>
-					              <td class="center"><a href="../../page/delete_link/'.$link['lie_id'].'/'.$page['pag_id'].'"><i class="red fas fa-trash-alt"></i></a></td>
-					            </tr>
-			          		';
+		          				if($link['lie_valeur'] != "Image"){
+			          				echo '
+													<tr>
+							              <td><span class="space">'.$link['lie_libelle'].'</span></td>
+							              <td><span class="space">'.$link['tln_libelle'].'</span></td>
+							              <td><a href="#" class="space">'.$link['lie_valeur'].'</a></td>
+							              <td class="center"><a href="../../page/delete_link/'.$link['lie_id'].'/'.$page['pag_id'].'"><i class="red fas fa-trash-alt"></i></a></td>
+							            </tr>
+					          		';
+		          				}
 		          			}
 		          		}
 		          	?>

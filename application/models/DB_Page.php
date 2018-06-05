@@ -138,6 +138,21 @@
 			return $query->result_array();
 		}
 
+	/* function that ... */
+		public function get_link_value($link_id){
+			$query = $this->db->query('
+				SELECT lie_valeur
+				FROM t_lien_lie
+				WHERE lie_id = \''.$link_id.'\'
+			');
+
+			$result = $query->result_array();
+			if(!empty($result)){
+				return $result[0]['lie_valeur'];
+			}
+			return null;
+		}
+
 	/* function taht ... */
 		public function delete_page_link($id){
 			$this->db->query('DELETE FROM t_lien_lie WHERE lie_id = '.$id.'');
@@ -161,7 +176,8 @@
 			$query = $this->db->query('
 				SELECT lie_valeur
 				FROM t_lien_lie
-				WHERE lie_id = \''.$id.'\'
+				WHERE pag_id = \''.$id.'\'
+				AND lie_libelle = \'Image\'
 			');
 			$result = $query->result_array();
 			if(!empty($result)){

@@ -1,7 +1,7 @@
  <fieldset style="display: block;">
   <legend style="font-size: 14px; font-weight: bold;">Sélectionner l'image de la page : </legend>
   <div class="form-group">
-  	<input id="file-input" type="file" name="pag_picture" style="display: none;" accept="image/*">
+  	<input id="file-input" type="file" name="pag_picture" style="display: none;" accept="image/*" required="true">
   	<div style="height: 400px; text-align: center;">
   		<i id="picture-icon" class="fas fa-image" style="font-size: 300px; color: #ccc;"></i>
   		<img id="picture" src="" height="400" style="border-radius: 10px; cursor: pointer;">

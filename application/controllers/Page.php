@@ -115,7 +115,7 @@
 					
 						/* construct array to send datas to the db model */
 							$links[0]['link_id'] = $id;
-							$links[0]['link_label'] = 'Image de la page';
+							$links[0]['link_label'] = 'Image';
 							$links[0]['link_type'] = $this->DB_Page->get_link_type_id('Image');
 							$links[0]['link_value'] = $temp;
 
@@ -197,11 +197,20 @@
 		/* function that .... */
 			public function delete($id){
 				if(!empty($id)){
-					/* Delete all from the data base */
-						$this->DB_Page->delete($id);
+					/* Get the page links */
+						$links = $this->DB_Page->get_page_links($id);
 
 					/* Delete the files from the pages directory */
-						#code php
+						foreach($links as $link){
+							if(!empty($link['lie_valeur'])){
+								$path = $this->PATH.$link['lie_valeur'];
+								if(file_exists($path)){
+									unlink($path);
+								}
+							}
+						}
+					/* Delete all from the data base */
+						$this->DB_Page->delete($id);
 					/* Redirect to manage page */
 						echo '
 							<script>
@@ -226,6 +235,7 @@
 							$datas['res_pseudo'] = $_SESSION['cmp_pseudo'];
 
 							$this->DB_Page->update($datas);
+							$pag_id = $datas['pag_id'];
 
 						/* get last link id from the database */
 							$id = $this->DB_Page->get_last_link_id();
@@ -233,17 +243,22 @@
 						/* set the name file to the next id */
 							$id++;
 							$links = array();
+						/* upload the page image */
+							$temp = $this->upload_file('pag_picture', 'img_pag_'.$pag_id);
+					
+						/* Upload other links */
 						/* Calculte the number of links */
 							$NB_LINK = count($_FILES);
 						/* Get links indexes */
 							$KEYS = array_keys($_FILES);
 							$INDEXES = array();
-							for($cpt=0; $cpt<$NB_LINK; $cpt++){
-								$INDEXES[$cpt] = explode('_', $KEYS[$cpt])[1];
+							/* we should start from he index 1 --> because index 0 : is for the img_pic */
+							for($cpt=1; $cpt<$NB_LINK; $cpt++){
+								$INDEXES[$cpt-1] = explode('_', $KEYS[$cpt])[1];
 							}
 
 						/* create an array with the correct links information */
-							for($i=0; $i<$NB_LINK; $i++){
+							for($i=0; $i<$NB_LINK-1; $i++){
 								/* Insert files values etc. + upload files */
 									if(!empty($_FILES['file_'.$INDEXES[$i]]['name'])){
 										$temp = $this->upload_file('file_'.$INDEXES[$i], $id);
@@ -267,10 +282,11 @@
 									$id++;
 							}
 						/* insert links into bdd */
-							$this->DB_Page->insert_page_links($links, $datas['pag_id']);
+							$this->DB_Page->insert_page_links($links, $pag_id);
 					}
+
 				/* Redirect to manage page */
-				if(!empty($links)){
+				if(!empty($pag_id)){
 					echo '
 						<script>
 							alert("La page a été correctement mise à jour !");
@@ -288,17 +304,32 @@
 				}
 
 			}
+		/* function that ... */
+			private function get_link_value($link_id){
+				return $this->DB_Page->get_link_value($link_id);
+			}
 
 		/* function that ... */
 			public function delete_link($link_id, $pag_id){
 				if(!empty($link_id)){
-					$this->DB_Page->delete_page_link($link_id);
-					echo '
-						<script>
-							alert("Le lien a été correctement supprimé !");
-							document.location.href = "../../../page/edit/'.$pag_id.'"
-						</script>
-					';
+					/* Get filename from the database */
+						$val = $this->PATH.$this->get_link_value($link_id);
+
+					/* delete the file if it exist in erectory */
+						if(file_exists($val)){
+							unlink($val);
+						}
+
+					/* delete the link from the database */
+						$this->DB_Page->delete_page_link($link_id);
+
+					/* Refrech and redirection to the edit page */
+						echo '
+							<script>
+								alert("Le lien a été correctement supprimé !");
+								document.location.href = "../../../page/edit/'.$pag_id.'"
+							</script>
+						';
 				}
 				else{
 					echo '
