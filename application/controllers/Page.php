@@ -65,21 +65,21 @@
 			}
 
 			/* function that upload a file into a path */
-				private function upload_file($src, $name){
+				private function upload_file($src, $name) {
 					/* verify that the source is not empty */
 					if(!empty($_FILES[''.$src.''])){
 						/* Differents file propreties */
 							$file_temp  = $_FILES[''.$src.'']['tmp_name'];
 							$file_type  = $_FILES[''.$src.'']['type'];
 
-						/* Filtring the datas to get a correct filename */
+						/* Filtering the datas to get a correct filename */
 							if(!empty($file_type)){
 								$type = explode('/', $file_type)[1];
 								$name = $name.'.'.$type;
 							}
 							else $name = null;
 
-						/* move the file the correct path */
+						/* move the file to the correct path */
 							$path = $this->PATH.$name;
 							if(move_uploaded_file($file_temp, $path)){
 								return $name;
@@ -91,7 +91,7 @@
 
 
 		/* function that .... */
-			public function add(){
+			public function add() {
 				/* Verify that the posted values are not empty */
 					if( !empty($this->input->post('pag_type')) && !empty($this->input->post('pag_statut')) && !empty($this->input->post('pag_titre')) && !empty($this->input->post('pag_description')) ){
 						/* Insert the t_page_pag row */

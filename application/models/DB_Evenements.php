@@ -1,14 +1,15 @@
 <?php
 /**
- * Created on Visual Studio Code
+ * Created by Visual Studio Code
  * User: alioum
  * Date: 27/05/2018
  * Time: 16:00
  */
 
-class  DB_Actualites extends CI_Model {
+class  DB_Evenements extends CI_Model {
+
 	/**
-	 * Projet_Model constructor.
+	 * DB_Stage constructor.
 	 */
 	public function __construct() {
 			parent::__construct();
@@ -16,26 +17,28 @@ class  DB_Actualites extends CI_Model {
 	}
 
 	/**
-	 * GET_ACTUALITES METHOD
-	 * @param bool $act_id
+	 * GET_STAGES METHOD
+	 * @param bool $pag_id
 	 * @return array of values from table t_pages_pag where id = rubrique.id
 	 */
-	public function get_actualites($act_id = FALSE) {
+	public function get_evenements($even_id = FALSE) {
 
-			if ($act_id === FALSE) {
+			if ($even_id === FALSE) {
 				$this->db->select();
-				$this->db->from('t_rubrique_rub, t_page_pag');
-				$this->db->where(array('rub_libelle' => "actualite"));
-				$query_actualites = $this->db->get();
+				//$this->db->select('rub_libelle');
+				$this->db->from('t_rubrique_rub,t_page_pag');
+				$this->db->where(array('rub_libelle' => "evenement"));
+				//$this->db->where(array('rub_id' => 4));
+				$query_stages = $this->db->get();
 				// return result under an array
-				return $query_actualites->result_array();
+				return $query_stages->result_array();
 			}
 		// get the posts where $slug is present
 		$this->db->select();
-		$this->db->from('t_rubrique_rub, t_page_pag');
-		$this->db->where(array( 'pag_id' => $act_id));
-		$query_projets = $this->db->get();
-		return $query_projets->row_array();
+		$this->db->from('t_rubrique_rub,t_page_pag');
+		$this->db->where(array( 'pag_id' => $even_id));
+		$query_stages = $this->db->get();
+		return $query_stages->row_array();
 	}
 
 	/**

@@ -1,6 +1,6 @@
 <!-- begin region of footer -->
 <div id="footer" class="w3-container w3-mobile">
-	<h1 class="author">OpenMag<a href="https://www.univ-brest.fr" target="_blank">UBO</a></h1>
+	<h1 class="author"><a href="<?php echo base_url(); ?>/Home" class="openMag">OpenMag</a><a href="https://www.univ-brest.fr" class="ubo" target="_blank">UBO</a></h1>
 </div>
 <!-- end region of footer  -->
 </div>
@@ -9,7 +9,6 @@
 
 <!--jquery script-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<!-- <script src="<?php echo base_url(); ?>assets/front_office/libs/jquery-1.10.2.js"></script> -->
 <!--js script-->
 <script src="<?php echo base_url(); ?>assets/front_office/js/index.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>assets/front_office/js/final-page.js" type="text/javascript"></script>

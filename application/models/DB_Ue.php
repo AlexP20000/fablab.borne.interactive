@@ -6,7 +6,7 @@
  * Time: 16:00
  */
 
-class  DB_Actualites extends CI_Model {
+class  DB_Ue extends CI_Model {
 	/**
 	 * Projet_Model constructor.
 	 */
@@ -20,12 +20,12 @@ class  DB_Actualites extends CI_Model {
 	 * @param bool $act_id
 	 * @return array of values from table t_pages_pag where id = rubrique.id
 	 */
-	public function get_actualites($act_id = FALSE) {
+	public function get_ues($ue_id = FALSE) {
 
 			if ($act_id === FALSE) {
 				$this->db->select();
 				$this->db->from('t_rubrique_rub, t_page_pag');
-				$this->db->where(array('rub_libelle' => "actualite"));
+				$this->db->where(array('rub_libelle' => "ue"));
 				$query_actualites = $this->db->get();
 				// return result under an array
 				return $query_actualites->result_array();
@@ -33,7 +33,7 @@ class  DB_Actualites extends CI_Model {
 		// get the posts where $slug is present
 		$this->db->select();
 		$this->db->from('t_rubrique_rub, t_page_pag');
-		$this->db->where(array( 'pag_id' => $act_id));
+		$this->db->where(array( 'pag_id' => $ue_id));
 		$query_projets = $this->db->get();
 		return $query_projets->row_array();
 	}

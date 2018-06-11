@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><?= $projet['pag_titre'] ?></title>
+    <title><?= $page['pag_titre'] ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/front_office/css/w3.css">
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url(); ?>assets/front_office/css/final-page.css" />
@@ -22,7 +22,7 @@
 				<a href="<?php echo base_url(); ?>Home/index">Bonjour</a>
 			</div>
 			<div id="rubricName" class="w3-container w3-cell w3-cell-middle w3-mobile ">
-				<a href="<?php echo base_url(); ?>"><?php echo $projet['rub_libelle']; ?></a>
+				<a href="<?php echo base_url(); ?>"><?php echo $page['rub_libelle']; ?></a>
 			</div>
 			<div id="timeBlock" class="w3-container w3-cell w3-cell-middle w3-mobile">
 				<a href="<?php echo base_url(); ?>"><?php echo date(DATE_RFC850); ?></a>

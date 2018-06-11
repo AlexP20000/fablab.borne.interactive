@@ -7,7 +7,7 @@
 * {
     padding: 0;
     margin: 0;
-    font: 1rem Arial, Menlo, Tahoma;
+    font: 2rem Arial, Menlo, Tahoma;
 	background-color: cadetblue;
 }
 body {
@@ -140,7 +140,6 @@ body {
 	width: 100%;
 	height: auto;
 	min-height: 50px;
-	font: 1.5rem italic Roboto, Arial, Tahoma;
 }
 /* bottom page link */
 #bottomPageLink a {
@@ -153,9 +152,10 @@ body {
 	width: 150px;
 	height: 50px;
 	color: #000;
-	padding: 10px;
+	padding: 20px;
 	font-size: 100%;
 	font-weight: lighter;
+	font-size: 1.5rem;
 	background-color: #7e0fdb;
 	border: 2px solid #fff;
 	-webkit-border-radius: 10px;
@@ -168,11 +168,27 @@ body {
 }
 /* bottom page link on hover */
 #bottomPageLink a:hover {
-
+	background-color: #cac4c4;
+	color: #7e0fdb;
 }
 /* application name */
-.author {
+h1 a, h1 a:hover {
     padding: 10px;
     text-align: center;
     color: rgb(7, 9, 10);
+	text-decoration: none;
+}
+.openMag {
+	text-decoration: none;
+	font-size: 2rem;
+}
+.openMag:hover {
+	color: #ececec;
+}
+.ubo {
+	text-decoration: none;
+	font-size: 2rem;
+}
+.ubo:hover {
+	color: #0f0404;
 }

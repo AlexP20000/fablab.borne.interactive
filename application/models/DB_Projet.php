@@ -21,22 +21,21 @@ class  DB_Projet extends CI_Model {
 	 * @param bool $pag_id
 	 * @return array of values from table t_pages_pag where id = rubrique.id
 	 */
-	public function get_projets($proj_id = FALSE) {
+	public function get_projets($pag_id = FALSE) {
 
 			if ($pag_id === FALSE) {
 				$this->db->select();
 				//$this->db->select('rub_libelle');
 				$this->db->from('t_rubrique_rub, t_page_pag');
-				$this->db->where(array('rub_libelle' => "projets"));
-				//$this->db->where(array('rub_id' => 4));
+				$this->db->where(array('rub_libelle' => "projet"));
 				$query_projets = $this->db->get();
 				// return result under an array
 				return $query_projets->result_array();
 			}
-		// get the posts where $slug is present
+		// get the posts where $pag_id is present
 		$this->db->select();
 		$this->db->from('t_rubrique_rub, t_page_pag');
-		$this->db->where(array( 'pag_id' => $proj_id));
+		$this->db->where(array( 'pag_id' => $pag_id));
 		$query_projets = $this->db->get();
 		return $query_projets->row_array();
 	}

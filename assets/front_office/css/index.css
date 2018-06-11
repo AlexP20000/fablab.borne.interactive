@@ -138,34 +138,36 @@ h1.author a:hover {
 }
 /* begin region Slider animation */
 @keyframes slide {
-    0% {
-        left: 0%;
-    }
-    20% {
-        left: 0%;
-    }
-    25% {
-        left: -100%;
-    }
-    45% {
-        left: -100%;
-    }
-    50% {
-        left: -200%;
-    }
-    70% {
-        left: -200%;
-    }
-    75% {
-        left: -300%;
-    }
-    95% {
-        left: -300%;
-    }
-    100% {
-        left: -400%;
-    }
+	0% {
+		left: 0%;
+	}
+	20% {
+		left: 0%;
+	}
+	25% {
+		left: -100%;
+	}
+	45% {
+		left: -100%;
+	}
+	50% {
+		left: -200%;
+	}
+	70% {
+		left: -200%;
+	}
+	75% {
+		left: -300%;
+	}
+	95% {
+		left: -300%;
+	}
+	100% {
+		left: -400%;
+	}
 }
+/* end region Slider animation */
+
 /* slides global container */
 #slider {
 	padding: 0;
@@ -182,7 +184,7 @@ h1.author a:hover {
 	height: 100%;
 }
 /* slides i.e images container */
-/* screen resolution = 1920*1080, should make
+/* screen resolution = 1920*1080, have to make
 the images have this resolution for better rendering */
 #slider .slider-view {
     position: relative;
@@ -195,7 +197,6 @@ the images have this resolution for better rendering */
     animation: 30s slide infinite;
     z-index: 1;
 }
-/* end region Slider animation */
 
 /* begin region of pulsing  animation */
 @keyframes pulsing {

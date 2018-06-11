@@ -21,13 +21,13 @@ class  DB_Stage extends CI_Model {
 	 * @param bool $pag_id
 	 * @return array of values from table t_pages_pag where id = rubrique.id
 	 */
-	public function get_stages($stg_id = FALSE) {
+	public function get_stages($stag_id = FALSE) {
 
-			if ($rub_id === FALSE) {
+			if ($stag_id === FALSE) {
 				$this->db->select();
 				//$this->db->select('rub_libelle');
 				$this->db->from('t_rubrique_rub,t_page_pag');
-				$this->db->where(array('rub_libelle' => "stages"));
+				$this->db->where(array('rub_libelle' => "stage"));
 				//$this->db->where(array('rub_id' => 4));
 				$query_stages = $this->db->get();
 				// return result under an array
@@ -35,8 +35,8 @@ class  DB_Stage extends CI_Model {
 			}
 		// get the posts where $slug is present
 		$this->db->select();
-		$this->db->from('t_rubrique_rub');
-		$this->db->where(array( 'rub_id' => $stg_id));
+		$this->db->from('t_rubrique_rub,t_page_pag');
+		$this->db->where(array( 'pag_id' => $stag_id));
 		$query_stages = $this->db->get();
 		return $query_stages->row_array();
 	}
