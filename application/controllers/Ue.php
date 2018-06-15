@@ -27,7 +27,7 @@ class Ue extends CI_Controller {
 		$data['title'] = $data['page']['rub_libelle'];
 		$this->load->view('front_office/inc/headerPages', $data);
 		$this->load->view('front_office/page', $data);
-		$this->load->view('front_office/inc/footer', $data);
+		$this->load->view('front_office/inc/footerPages', $data);
 	}
 
 

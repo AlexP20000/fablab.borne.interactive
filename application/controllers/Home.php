@@ -14,7 +14,7 @@ class Home extends CI_Controller {
 
         $this->load->view('front_office/inc/headerHome', $data);
         $this->load->view('front_office/'.$page, $data);
-        $this->load->view('front_office/inc/footer');
+        $this->load->view('front_office/inc/footerHome');
     }
 
 	/**
@@ -32,7 +32,7 @@ class Home extends CI_Controller {
 		$data["title"] = 'Projets';
     	$this->load->view('front_office/inc/headerPages', $data);
     	$this->load->view('front_office/pages', $data);
-    	$this->load->view('front_office/inc/footer', $data);
+    	$this->load->view('front_office/inc/footerPages', $data);
 	}
 
 

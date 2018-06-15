@@ -1,6 +1,9 @@
 <!-- begin region of footer -->
 <div id="footer" class="w3-container w3-mobile">
-	<h1 class="author"><a href="<?php echo base_url(); ?>/Home" class="openMag">OpenMag</a><a href="https://www.univ-brest.fr" class="ubo" target="_blank">UBO</a></h1>
+	<h1 class="author">
+        <a href="<?php echo base_url(); ?>Compte/login" class="openMag">OpenMag</a>
+        <a href="https://www.univ-brest.fr" class="ubo" target="_blank">UBO</a>
+    </h1>
 </div>
 <!-- end region of footer  -->
 </div>

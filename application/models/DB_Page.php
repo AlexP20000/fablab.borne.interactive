@@ -32,7 +32,7 @@
 				/* Get the responsable id */
 					$res_id = $this->get_responsable_id($datas['res_pseudo']);
 
-				/* insert the row to the bdd if res_id is not empty */
+				/* insert the row to the db if res_id is not empty */
 					if(!empty($res_id)){
 						$this->db->query('
 							INSERT INTO t_page_pag(pag_titre, pag_description, pag_date, pag_statut, res_id, rub_id) 

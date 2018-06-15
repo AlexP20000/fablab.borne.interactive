@@ -116,26 +116,28 @@ body {
 /* end region of center circle styling */
 
 /* footer link */
-h1.author {
+.author {
     position: absolute;
     bottom: 0;
     left: 40%;
     text-align:center;
-    color: rgb(12, 9, 9);
     font-family: Helvetica, Arial, sans-serif;
-    font-weight: 300;
-    font-size: 2rem;
     z-index: 2;
 }
 
-h1.author a {
+.author a {
     color: #348;
+    font-size: 1rem;
     text-decoration:none;
 }
 
-h1.author a:hover {
+.author a:hover {
     color: #ddd;
 }
+.ubo {
+    color: #7e0fdb;
+}
+
 /* begin region Slider animation */
 @keyframes slide {
 	0% {
